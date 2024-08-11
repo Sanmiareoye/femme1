@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  margin: 20px;
+  padding: 0;
+}
+.uploaded-images {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.uploaded-image {
+  width: 98%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+.flash-message {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.flash-error {
+  background-color: #f2dede;
+  border-color: #ebcc
+}

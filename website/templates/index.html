@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Upload Photos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Photos</h1>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+        <div class="flash-message {{ 'flash-error' if 'error' in messages[0][0] else '' }}">
+            {% for category, message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.photo.label }}<br>
+                {{ form.photo }}
+            </div>
+            <div>
+                {{ form.hairstyle.label }}<br>
+                {{ form.hairstyle }}
+            </div>
+            <div>
+                {{ form.recipient_email.label }}<br>
+                {{ form.recipient_email }}
+            </div>
+            <div>
+                {{ form.submit }}
+            </div>
+        </form>
+        {% if file_url or hairstyle_url or processed_file_url %}
+        <div class="uploaded-images">
+            {% if file_url %}
+            <div>
+                <h2>Uploaded Photo:</h2>
+                <img src="{{ file_url }}" alt="Uploaded Photo" class="uploaded-image">
+            </div>
+            {% endif %}
+            {% if hairstyle_url %}
+            <div>
+                <h2>Uploaded Hairstyle Photo:</h2>
+                <img src="{{ hairstyle_url }}" alt="Uploaded Hairstyle Photo" class="uploaded-image">
+            </div>
+            {% endif %}
+            {% if processed_file_url %}
+            <div>
+                <h2>Your Processed Pic:</h2>
+                <img src="{{ processed_file_url }}" alt="Processed Pic" class="uploaded-image">
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
