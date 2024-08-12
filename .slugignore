@@ -1,5 +1,10 @@
 .venv/
 .git/
-*.pyc
-__pycache__/
-
+*.log
+*.tmp
+node_modules/
+build/
+dist/
+*.zip
+*.tar.gz
+*.rar
