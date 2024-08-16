@@ -1,8 +1,2 @@
 # Femme
-# Femme
-# Femme
-# Femme
-# Femme
-# Femme
-# femme
-# femme1
+Developed Femme, an AI-driven platform designed to help users explore and visualise themselves with various hairstyles.
